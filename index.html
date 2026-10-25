@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Proyek Interaktif</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen p-6">
+  <div class="max-w-5xl mx-auto space-y-6">
+
+    <!-- Header -->
+    <header class="text-center">
+      <h1 class="text-3xl font-bold text-gray-800">Portofolio & Manajemen Proyek</h1>
+      <p class="text-gray-600">Latihan Pemrograman Web - Event Handling & Manipulation Array</p>
+    </header>
+
+    <!-- FITUR 1: Form Input Proyek Dinamis -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h2 class="text-xl font-bold mb-4 text-gray-700">Tambah Proyek Baru</h2>
+      <form id="projectForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Judul Proyek</label>
+          <input type="text" id="inputTitle" placeholder="Contoh: Website E-Commerce" class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Kategori</label>
+          <select id="inputCategory" class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <option value="Web App">Web App</option>
+            <option value="Mobile App">Mobile App</option>
+            <option value="Desktop App">Desktop App</option>
+            <option value="UI/UX Design">UI/UX Design</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Estimasi Anggaran (IDR)</label>
+          <input type="number" id="inputBudget" placeholder="Contoh: 5000000" class="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        </div>
+
+        <div class="flex items-center mt-6">
+          <input type="checkbox" id="inputStatus" class="w-5 h-5 text-blue-600 rounded focus:ring-blue-500">
+          <label for="inputStatus" class="ml-2 text-sm text-gray-700 font-medium">Status 'Sudah Selesai'</label>
+        </div>
+
+        <div class="md:col-span-2">
+          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition">Simpan Proyek</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Kartu Statistik -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white p-4 rounded-xl shadow-sm text-center border-l-4 border-blue-500">
+        <p class="text-sm text-gray-500">Total Proyek</p>
+        <p id="statTotal" class="text-2xl font-bold text-gray-800">0</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow-sm text-center border-l-4 border-green-500">
+        <p class="text-sm text-gray-500">Selesai</p>
+        <p id="statDone" class="text-2xl font-bold text-green-600">0</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow-sm text-center border-l-4 border-yellow-500">
+        <p class="text-sm text-gray-500">Dalam Pengerjaan</p>
+        <p id="statPending" class="text-2xl font-bold text-yellow-600">0</p>
+      </div>
+      <div class="bg-white p-4 rounded-xl shadow-sm text-center border-l-4 border-purple-500">
+        <p class="text-sm text-gray-500">Total Anggaran</p>
+        <p id="statBudget" class="text-xl font-bold text-purple-600">Rp 0</p>
+      </div>
+    </section>
+
+    <!-- FITUR 2: Live Search & Daftar Proyek -->
+    <section class="space-y-4">
+      <div class="flex justify-between items-center flex-wrap gap-4">
+        <h2 class="text-xl font-bold text-gray-700">Daftar Proyek</h2>
+        <input type="text" id="searchInput" placeholder="Cari nama proyek..." class="w-full sm:w-64 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+      </div>
+
+      <!-- Container Kartu Proyek -->
+      <div id="projectList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
